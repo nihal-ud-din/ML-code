@@ -69,6 +69,11 @@
 
             xhr.open('POST','/predict',true);
             document.getElementByID("prediction").innerHTML = "Wait Predicting Price!....";
+            xhr.onreadystatechange == function(){
+                if(xhr.readyState == XMLHttpRequest.DONE){
+                    document.getElementById('prediction').innerHTML="Prediction: ₹ "+xhr.responseText;
+                }
+            }
         }
 
     </script>
